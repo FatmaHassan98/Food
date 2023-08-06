@@ -5,7 +5,7 @@
     <data>
         <variable
             name="category"
-            type="com.example.food.data.remote.entity.Category" />
+            type="com.example.domain.entity.Category" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
