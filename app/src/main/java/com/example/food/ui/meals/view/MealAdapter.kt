@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.food.data.remote.entity.Meal
+import com.example.domain.entity.Meal
 import com.example.food.databinding.MealItemBinding
 import com.squareup.picasso.Picasso
 
