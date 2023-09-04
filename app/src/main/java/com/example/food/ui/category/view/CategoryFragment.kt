@@ -1,23 +1,20 @@
 package com.example.food.ui.category.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.food.databinding.FragmentCategoryBinding
 import com.example.food.ui.category.viewModel.CategoryViewModel
 import com.example.food.utils.RemoteStatus
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-
-@AndroidEntryPoint
 class CategoryFragment : Fragment(), OnItemCategoryClicked {
 
     private lateinit var binding: FragmentCategoryBinding
@@ -53,9 +50,7 @@ class CategoryFragment : Fragment(), OnItemCategoryClicked {
                         binding.categoryRecycler.apply {
                             adapter = categoryAdapter
                             categoryAdapter.submitList(it.data)
-                            layoutManager = LinearLayoutManager(requireContext()).apply {
-                                orientation = RecyclerView.VERTICAL
-                            }
+                            layoutManager = GridLayoutManager(requireContext(), 2)
                         }
 
                     }
