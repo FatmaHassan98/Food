@@ -27,9 +27,9 @@ class CategoryViewModel @Inject constructor(private val useCase: UseCase) : View
     private fun getCategory(){
         viewModelScope.launch {
             try {
-                useCase.getCategories().catch { it ->
+                useCase.getCategories().catch {
                     _categories.value = RemoteStatus.Failure(it)
-                }.collectLatest { it ->
+                }.collectLatest {
                     _categories.value = RemoteStatus.Success(it)
                 }
             }catch (e : Exception){
